@@ -20,7 +20,6 @@ class TabletView<T> extends StatelessWidget {
   final double masterViewFraction;
   final double masterViewMaxWidth;
   final Duration transitionAnimationDuration;
-  final bool debug;
   const TabletView({
     super.key,
     this.title,
@@ -35,7 +34,6 @@ class TabletView<T> extends StatelessWidget {
     required this.transitionAnimationDuration,
     this.groupedBy,
     this.groupHeaderBuilder,
-    this.debug = false,
   });
 
   @override
@@ -62,6 +60,7 @@ class TabletView<T> extends StatelessWidget {
           detailsItemBuilder: detailsItemBuilder,
           detailsTitleBuilder: detailsTitleBuilder,
           viewModel: viewModel,
+          nothingSelectedWidget: nothingSelectedWidget,
         ),
         transitionBuilder: (child, animation) =>
             const FadeUpwardsPageTransitionsBuilder()

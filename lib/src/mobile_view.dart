@@ -17,21 +17,20 @@ class MobileView<T> extends StatelessWidget {
   final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   final Duration transitionAnimationDuration;
-  final bool debug;
   static const pageTransitionBuilder = ZoomPageTransitionsBuilder();
-  const MobileView(
-      {super.key,
-      this.title,
-      this.nothingSelectedWidget,
-      required this.viewModel,
-      required this.items,
-      required this.masterItemBuilder,
-      required this.detailsTitleBuilder,
-      required this.detailsItemBuilder,
-      this.groupedBy,
-      this.groupHeaderBuilder,
-      required this.transitionAnimationDuration,
-      this.debug = false});
+  const MobileView({
+    super.key,
+    this.title,
+    this.nothingSelectedWidget,
+    required this.viewModel,
+    required this.items,
+    required this.masterItemBuilder,
+    required this.detailsTitleBuilder,
+    required this.detailsItemBuilder,
+    this.groupedBy,
+    this.groupHeaderBuilder,
+    required this.transitionAnimationDuration,
+  });
 
   @override
   Widget build(BuildContext context) {
