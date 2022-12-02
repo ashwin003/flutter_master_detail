@@ -14,8 +14,8 @@ class MasterDetailsList<T> extends StatelessWidget {
   final Widget? nothingSelectedWidget;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final types.DetailsBuilder<T> detailsItemBuilder;
-  final types.Sort<T>? sortBy;
-  final types.Group<T>? groupedBy;
+  final types.Data<T>? sortBy;
+  final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   final double masterViewFraction;
   final Duration transitionAnimationDuration;
@@ -35,13 +35,10 @@ class MasterDetailsList<T> extends StatelessWidget {
       this.masterViewFraction = 0.333333,
       this.transitionAnimationDuration = const Duration(milliseconds: 500),
       this.debug = false}) {
-    if (sortBy != null) {
-      items.sort((a, b) {
-        final aVal = sortBy!(a);
-        final bVal = sortBy!(b);
-        return aVal.compareTo(bVal);
-      });
-    }
+    _sort([
+      groupedBy,
+      sortBy,
+    ]);
   }
 
   @override
@@ -111,5 +108,27 @@ class MasterDetailsList<T> extends StatelessWidget {
       title: title,
       debug: debug,
     );
+  }
+
+  void _sort(List<types.Data<T>?> sorters) {
+    for (var i = 0; i < sorters.length; i++) {
+      final sorter = sorters.elementAt(i);
+      final prevSorter =
+          i == 0 ? sorters.elementAt(i) : sorters.elementAt(i - 1);
+      if (sorter != null) {
+        items.sort((a, b) {
+          if (prevSorter != null) {
+            final aVal = prevSorter(a);
+            final bVal = prevSorter(b);
+            final res = aVal.compareTo(bVal);
+            if (res != 0) {
+              return res;
+            }
+          }
+
+          return sorter(a).compareTo(sorter(b));
+        });
+      }
+    }
   }
 }

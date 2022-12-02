@@ -9,7 +9,7 @@ class MobileMasterView<T> extends StatelessWidget {
   final Widget? title;
   final List<T> items;
   final types.MasterBuilder<T> masterItemBuilder;
-  final types.Group<T>? groupedBy;
+  final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   const MobileMasterView({
     super.key,

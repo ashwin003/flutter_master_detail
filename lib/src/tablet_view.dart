@@ -15,7 +15,7 @@ class TabletView<T> extends StatelessWidget {
   final types.MasterBuilder<T> masterItemBuilder;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final types.DetailsBuilder<T> detailsItemBuilder;
-  final types.Group<T>? groupedBy;
+  final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   final double masterViewFraction;
   final double masterViewMaxWidth;

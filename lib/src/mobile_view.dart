@@ -14,7 +14,7 @@ class MobileView<T> extends StatelessWidget {
   final types.MasterBuilder<T> masterItemBuilder;
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
-  final types.Group<T>? groupedBy;
+  final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   final Duration transitionAnimationDuration;
   final bool debug;

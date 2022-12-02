@@ -7,7 +7,7 @@ class ElementList<T> extends StatelessWidget {
   final List<T> items;
   final Widget? title;
   final T? selectedItem;
-  final types.Group<T>? groupedBy;
+  final types.Data<T>? groupedBy;
   final types.GroupHeader? groupHeaderBuilder;
   final types.MasterBuilder<T> masterItemBuilder;
   final ValueSetter<T> onTap;
