@@ -15,6 +15,7 @@ class MobileView<T> extends StatelessWidget {
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final types.Group<T>? groupedBy;
+  final types.GroupHeader? groupHeaderBuilder;
   final Duration transitionAnimationDuration;
   final bool debug;
   static const pageTransitionBuilder = ZoomPageTransitionsBuilder();
@@ -28,6 +29,7 @@ class MobileView<T> extends StatelessWidget {
       required this.detailsTitleBuilder,
       required this.detailsItemBuilder,
       this.groupedBy,
+      this.groupHeaderBuilder,
       required this.transitionAnimationDuration,
       this.debug = false});
 
@@ -46,6 +48,8 @@ class MobileView<T> extends StatelessWidget {
       viewModel: viewModel,
       items: items,
       masterItemBuilder: masterItemBuilder,
+      groupedBy: groupedBy,
+      groupHeaderBuilder: groupHeaderBuilder,
       title: title,
     );
   }

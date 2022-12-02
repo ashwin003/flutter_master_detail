@@ -35,6 +35,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: MasterDetailsList<Contact>(
         items: contactsList,
+        groupedBy: (data) => data.name[0].toString(),
         masterItemBuilder: _buildListTile,
         detailsTitleBuilder: (context, data) => FlexibleSpaceBar(
           title: Text(data.name),
@@ -43,7 +44,7 @@ class MyHomePage extends StatelessWidget {
         detailsItemBuilder: (context, data) => Center(
           child: Text(data.name),
         ),
-        sortBy: (data) => data.number,
+        sortBy: (data) => data.name,
         title: const FlexibleSpaceBar(
           title: Text("Contacts"),
         ),

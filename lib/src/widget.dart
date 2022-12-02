@@ -16,6 +16,7 @@ class MasterDetailsList<T> extends StatelessWidget {
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.Sort<T>? sortBy;
   final types.Group<T>? groupedBy;
+  final types.GroupHeader? groupHeaderBuilder;
   final double masterViewFraction;
   final Duration transitionAnimationDuration;
   final bool debug;
@@ -30,6 +31,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       required this.detailsItemBuilder,
       this.sortBy,
       this.groupedBy,
+      this.groupHeaderBuilder,
       this.masterViewFraction = 0.333333,
       this.transitionAnimationDuration = const Duration(milliseconds: 500),
       this.debug = false}) {
@@ -68,6 +70,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       detailsTitleBuilder: detailsTitleBuilder,
       detailsItemBuilder: detailsItemBuilder,
       groupedBy: groupedBy,
+      groupHeaderBuilder: groupHeaderBuilder,
       title: title,
       masterViewFraction: masterViewFraction,
       masterViewMaxWidth: 300,
@@ -85,6 +88,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       detailsTitleBuilder: detailsTitleBuilder,
       detailsItemBuilder: detailsItemBuilder,
       groupedBy: groupedBy,
+      groupHeaderBuilder: groupHeaderBuilder,
       title: title,
       masterViewFraction: masterViewFraction,
       masterViewMaxWidth: 300,
@@ -102,6 +106,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       detailsTitleBuilder: detailsTitleBuilder,
       detailsItemBuilder: detailsItemBuilder,
       groupedBy: groupedBy,
+      groupHeaderBuilder: groupHeaderBuilder,
       transitionAnimationDuration: transitionAnimationDuration,
       title: title,
       debug: debug,

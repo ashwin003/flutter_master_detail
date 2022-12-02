@@ -1,5 +1,5 @@
 name: flutter_master_detail
-description: A new Flutter module project.
+description: A package that simplifies building flexible adaptive master detail views for different screen sizes.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -15,7 +15,7 @@ description: A new Flutter module project.
 # This version is used _only_ for the Runner app, which is used if you just do
 # a `flutter run` or a `flutter make-host-app-editable`. It has no impact
 # on any other native host app that you embed your Flutter project into.
-version: 1.0.0
+version: 1.1.0
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -30,6 +30,8 @@ dependencies:
   animations: ^2.0.7
   responsive_builder: ^0.4.3
   stacked: ^3.0.0
+  collection: ^1.16.0
+  flutter_sticky_header: ^0.6.4
 
 dev_dependencies:
   flutter_test:

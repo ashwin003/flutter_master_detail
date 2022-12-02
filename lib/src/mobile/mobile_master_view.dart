@@ -10,6 +10,7 @@ class MobileMasterView<T> extends StatelessWidget {
   final List<T> items;
   final types.MasterBuilder<T> masterItemBuilder;
   final types.Group<T>? groupedBy;
+  final types.GroupHeader? groupHeaderBuilder;
   const MobileMasterView({
     super.key,
     this.title,
@@ -17,6 +18,7 @@ class MobileMasterView<T> extends StatelessWidget {
     required this.items,
     required this.masterItemBuilder,
     this.groupedBy,
+    this.groupHeaderBuilder,
   });
 
   @override
@@ -25,6 +27,8 @@ class MobileMasterView<T> extends StatelessWidget {
       key: ValueKey<T?>(viewModel.selectedItem),
       body: ElementList(
         items: items,
+        groupedBy: groupedBy,
+        groupHeaderBuilder: groupHeaderBuilder,
         selectedItem: viewModel.selectedItem,
         title: title,
         masterItemBuilder: masterItemBuilder,

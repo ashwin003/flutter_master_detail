@@ -16,6 +16,7 @@ class DesktopView<T> extends StatelessWidget {
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.Group<T>? groupedBy;
+  final types.GroupHeader? groupHeaderBuilder;
   final double masterViewFraction;
   final double masterViewMaxWidth;
   final Duration transitionAnimationDuration;
@@ -33,6 +34,7 @@ class DesktopView<T> extends StatelessWidget {
     required this.masterViewMaxWidth,
     required this.transitionAnimationDuration,
     this.groupedBy,
+    this.groupHeaderBuilder,
     this.debug = false,
   });
 
@@ -79,6 +81,8 @@ class DesktopView<T> extends StatelessWidget {
       child: ElementList(
         items: items,
         title: title,
+        groupedBy: groupedBy,
+        groupHeaderBuilder: groupHeaderBuilder,
         selectedItem: viewModel.selectedItem,
         masterItemBuilder: masterItemBuilder,
         onTap: (item) => viewModel.selectedItem = item,
