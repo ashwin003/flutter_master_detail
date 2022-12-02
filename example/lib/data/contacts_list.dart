@@ -2,53 +2,58 @@ import '../types/contact.dart';
 
 final contactsList = [
   Contact(
-    "Ash",
-    "ashwin031192@gmail.com",
+    "Summer Carpenter",
+    "SummerCarpenter@gmail.com",
     1,
   ),
   Contact(
-    "Alexis",
-    "kub.alexis@gmail.com",
-    3,
-  ),
-  Contact(
-    "Osborne",
-    "jub.alexis@gmail.com",
+    "Niamh Barker",
+    "NiamhBarker@teleworm.us",
     2,
   ),
   Contact(
-    "Terrance",
-    "qub.alexis@gmail.com",
-    9,
+    "Harvey Scott",
+    "HarveyScott@teleworm.us",
+    3,
   ),
   Contact(
-    "Emmett",
-    "uub.alexis@gmail.com",
-    5,
-  ),
-  Contact(
-    "Frank",
-    "lub.alexis@gmail.com",
+    "Fawn J. Lutz",
+    "FawnJLutz@jourrapide.com",
     4,
   ),
   Contact(
-    "Boyle",
-    "aub.alexis@gmail.com",
+    "Marcos C. Charles",
+    "MarcosCCharles@armyspy.com",
+    5,
+  ),
+  Contact(
+    "Lesli R. Washington",
+    "LesliRWashington@rhyta.com",
     6,
   ),
   Contact(
-    "Jake",
-    "cooljake69@gmail.com",
+    "Michael V. Hurt",
+    "MichaelVHurt@rhyta.com",
+    7,
+  ),
+  Contact(
+    "Annie T. Waid",
+    "AnnieTWaid@dayrep.com",
     8,
   ),
   Contact(
-    "Gina",
-    "gina2563@gmail.com",
+    "Patricia C. Harrison",
+    "PatriciaCHarrison@teleworm.us",
+    9,
+  ),
+  Contact(
+    "Jodi B. Muirhead",
+    "JodiBMuirhead@rhyta.com",
     10,
   ),
   Contact(
-    "Scully",
-    "zub.alexis@gmail.com",
-    7,
+    "John K. Dewitt",
+    "JohnKDewitt@teleworm.us",
+    11,
   ),
 ];
