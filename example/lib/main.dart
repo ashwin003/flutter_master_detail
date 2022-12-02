@@ -45,11 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            label: 'Ungrouped',
+            label: 'Without grouping',
             icon: Icon(Icons.group_off),
           ),
           BottomNavigationBarItem(
-            label: 'Grouped',
+            label: 'With grouping',
             icon: Icon(Icons.group),
           ),
         ],
