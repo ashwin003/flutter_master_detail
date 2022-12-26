@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_master_detail/src/types/details_title_config.dart';
 import './mobile/mobile_detail_view.dart';
 import './mobile/mobile_master_view.dart';
 
@@ -18,6 +19,7 @@ class MobileView<T> extends StatelessWidget {
   final types.GroupHeader? groupHeaderBuilder;
   final Duration transitionAnimationDuration;
   static const pageTransitionBuilder = ZoomPageTransitionsBuilder();
+  final DetailsTitleConfig detailsTitleConfig;
   const MobileView({
     super.key,
     this.title,
@@ -30,6 +32,7 @@ class MobileView<T> extends StatelessWidget {
     this.groupedBy,
     this.groupHeaderBuilder,
     required this.transitionAnimationDuration,
+    required this.detailsTitleConfig,
   });
 
   @override
@@ -58,6 +61,7 @@ class MobileView<T> extends StatelessWidget {
       viewModel: viewModel,
       detailsTitleBuilder: detailsTitleBuilder,
       detailsItemBuilder: detailsItemBuilder,
+      detailsTitleConfig: detailsTitleConfig,
     );
   }
 

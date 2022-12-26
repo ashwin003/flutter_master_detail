@@ -3,16 +3,19 @@ import 'package:flutter_master_detail/src/detail_page.dart';
 
 import '../elements_view_model.dart';
 import '../types.dart' as types;
+import '../types/details_title_config.dart';
 
 class MobileDetailView<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
+  final DetailsTitleConfig detailsTitleConfig;
   const MobileDetailView({
     super.key,
     required this.viewModel,
     required this.detailsTitleBuilder,
     required this.detailsItemBuilder,
+    required this.detailsTitleConfig,
   });
 
   @override
@@ -27,6 +30,7 @@ class MobileDetailView<T> extends StatelessWidget {
         },
         icon: const Icon(Icons.arrow_back),
       ),
+      detailsTitleConfig: detailsTitleConfig,
     );
   }
 }

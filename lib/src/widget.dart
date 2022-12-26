@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_master_detail/src/desktop_view.dart';
-import 'package:flutter_master_detail/src/elements_view_model.dart';
-import 'package:flutter_master_detail/src/mobile_view.dart';
-import 'package:flutter_master_detail/src/tablet_view.dart';
+import 'desktop_view.dart';
+import 'elements_view_model.dart';
+import 'mobile_view.dart';
+import 'tablet_view.dart';
+import 'types/details_title_config.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked/stacked.dart';
 import 'types.dart' as types;
@@ -19,6 +20,7 @@ class MasterDetailsList<T> extends StatelessWidget {
   final types.GroupHeader? groupHeaderBuilder;
   final double masterViewFraction;
   final Duration transitionAnimationDuration;
+  final DetailsTitleConfig detailsTitleConfig;
   final ElementsViewModel<T> viewModel = ElementsViewModel<T>();
   MasterDetailsList({
     super.key,
@@ -33,6 +35,7 @@ class MasterDetailsList<T> extends StatelessWidget {
     this.groupHeaderBuilder,
     this.masterViewFraction = 0.333333,
     this.transitionAnimationDuration = const Duration(milliseconds: 500),
+    this.detailsTitleConfig = const DetailsTitleConfig(),
   }) {
     _sort([
       groupedBy,
@@ -71,6 +74,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       masterViewFraction: masterViewFraction,
       masterViewMaxWidth: 300,
       transitionAnimationDuration: transitionAnimationDuration,
+      detailsTitleConfig: detailsTitleConfig,
     );
   }
 
@@ -88,6 +92,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       masterViewFraction: masterViewFraction,
       masterViewMaxWidth: 300,
       transitionAnimationDuration: transitionAnimationDuration,
+      detailsTitleConfig: detailsTitleConfig,
     );
   }
 
@@ -103,6 +108,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       groupHeaderBuilder: groupHeaderBuilder,
       transitionAnimationDuration: transitionAnimationDuration,
       title: title,
+      detailsTitleConfig: detailsTitleConfig,
     );
   }
 

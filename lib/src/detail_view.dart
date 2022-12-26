@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'elements_view_model.dart';
 import 'types.dart' as types;
+import 'types/details_title_config.dart';
 
 class DetailView<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
   final Widget? nothingSelectedWidget;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final types.DetailsBuilder<T> detailsItemBuilder;
+  final DetailsTitleConfig detailsTitleConfig;
   final Widget? leading;
   const DetailView({
     super.key,
@@ -16,6 +18,7 @@ class DetailView<T> extends StatelessWidget {
     required this.viewModel,
     required this.detailsTitleBuilder,
     required this.detailsItemBuilder,
+    required this.detailsTitleConfig,
   });
 
   @override
@@ -34,6 +37,13 @@ class DetailView<T> extends StatelessWidget {
             context,
             viewModel.selectedItem as T,
           ),
+          titleSpacing: detailsTitleConfig.titleSpacing,
+          collapsedHeight: detailsTitleConfig.collapsedHeight,
+          expandedHeight: detailsTitleConfig.expandedHeight,
+          floating: detailsTitleConfig.floating,
+          pinned: detailsTitleConfig.pinned,
+          snap: detailsTitleConfig.snap,
+          stretch: detailsTitleConfig.stretch,
         ),
         SliverList(
             delegate: SliverChildBuilderDelegate(

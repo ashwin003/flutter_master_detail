@@ -3,6 +3,7 @@ import 'package:flutter_master_detail/src/detail_view.dart';
 
 import 'elements_view_model.dart';
 import 'types.dart' as types;
+import 'types/details_title_config.dart';
 
 class DetailPage<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
@@ -10,6 +11,7 @@ class DetailPage<T> extends StatelessWidget {
   final types.DetailsBuilder<T> detailsItemBuilder;
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
   final Widget? leading;
+  final DetailsTitleConfig detailsTitleConfig;
   const DetailPage({
     super.key,
     this.leading,
@@ -17,6 +19,7 @@ class DetailPage<T> extends StatelessWidget {
     required this.viewModel,
     required this.detailsTitleBuilder,
     required this.detailsItemBuilder,
+    required this.detailsTitleConfig,
   });
 
   @override
@@ -28,6 +31,7 @@ class DetailPage<T> extends StatelessWidget {
         nothingSelectedWidget: nothingSelectedWidget,
         detailsTitleBuilder: detailsTitleBuilder,
         detailsItemBuilder: detailsItemBuilder,
+        detailsTitleConfig: detailsTitleConfig,
       ),
     );
   }

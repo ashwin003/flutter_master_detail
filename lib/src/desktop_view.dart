@@ -6,6 +6,7 @@ import 'detail_view.dart';
 import 'element_list.dart';
 import 'elements_view_model.dart';
 import 'types.dart' as types;
+import 'types/details_title_config.dart';
 
 class DesktopView<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
@@ -20,6 +21,7 @@ class DesktopView<T> extends StatelessWidget {
   final double masterViewFraction;
   final double masterViewMaxWidth;
   final Duration transitionAnimationDuration;
+  final DetailsTitleConfig detailsTitleConfig;
   const DesktopView({
     super.key,
     this.title,
@@ -32,6 +34,7 @@ class DesktopView<T> extends StatelessWidget {
     required this.masterViewFraction,
     required this.masterViewMaxWidth,
     required this.transitionAnimationDuration,
+    required this.detailsTitleConfig,
     this.groupedBy,
     this.groupHeaderBuilder,
   });
@@ -61,6 +64,7 @@ class DesktopView<T> extends StatelessWidget {
           detailsTitleBuilder: detailsTitleBuilder,
           viewModel: viewModel,
           nothingSelectedWidget: nothingSelectedWidget,
+          detailsTitleConfig: detailsTitleConfig,
         ),
         transitionBuilder: (child, animation) =>
             const FadeUpwardsPageTransitionsBuilder()
