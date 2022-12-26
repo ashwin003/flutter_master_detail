@@ -8,18 +8,43 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked/stacked.dart';
 import 'types.dart' as types;
 
+/// A widget that builds an adaptive master detail view.
 class MasterDetailsList<T> extends StatelessWidget {
+  /// A widget to display as the master view's title.
   final FlexibleSpaceBar? title;
+
+  /// The list of items.
   final List<T> items;
+
+  /// Defines how an individual element in the master view is to be rendered.
   final types.MasterBuilder<T> masterItemBuilder;
+
+  /// A widget to display in the details view on larger screens when no element is selected in the master view.
   final Widget? nothingSelectedWidget;
+
+  /// Defines how the title section of the details view are rendered.
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
+
+  /// Defines how the main section of the details view are rendered.
   final types.DetailsBuilder<T> detailsItemBuilder;
+
+  /// Determines how to sort the items in the master view.
+  /// Items will be presented in the order given if not provided.
   final types.Data<T>? sortBy;
+
+  /// Specify if grouping is needed in the master view.
   final types.Data<T>? groupedBy;
+
+  /// Specify if you want to customize the group header. Will be ignored if `groupedBy` is not specified.
   final types.GroupHeader? groupHeaderBuilder;
+
+  /// The maximum percentage of view to be occupied by the master view on larger screens.
   final double masterViewFraction;
+
+  /// Transition animation duration.
   final Duration transitionAnimationDuration;
+
+  /// Additional optionss to configure title section of the details view.
   final DetailsTitleConfig detailsTitleConfig;
   final ElementsViewModel<T> viewModel = ElementsViewModel<T>();
   MasterDetailsList({

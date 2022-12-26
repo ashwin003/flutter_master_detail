@@ -3,13 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'types.dart' as types;
 
+/// Generic widget to build list of elements for the master view
 class ElementList<T> extends StatelessWidget {
+  /// The list of items.
   final List<T> items;
+
+  /// A widget to display as the master view's title.
   final Widget? title;
+
+  /// Holods the currently selected item in the master view, if one is selected.
   final T? selectedItem;
+
+  /// Specify if grouping is needed in the master view.
   final types.Data<T>? groupedBy;
+
+  /// Specify if you want to customize the group header. Will be ignored if `groupedBy` is not specified.
   final types.GroupHeader? groupHeaderBuilder;
+
+  /// Defines how an individual element in the master view is to be rendered.
   final types.MasterBuilder<T> masterItemBuilder;
+
+  /// Handles tap events for the items.
   final ValueSetter<T> onTap;
   const ElementList({
     super.key,

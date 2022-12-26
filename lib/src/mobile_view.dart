@@ -7,16 +7,35 @@ import './mobile/mobile_master_view.dart';
 import 'elements_view_model.dart';
 import 'types.dart' as types;
 
+/// A widget that defines the master detail view for mobile screens
 class MobileView<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
+
+  /// A widget to display as the master view's title.
   final FlexibleSpaceBar? title;
+
+  /// A widget to display in the details view on larger screens when no element is selected in the master view.
   final Widget? nothingSelectedWidget;
+
+  /// The list of items.
   final List<T> items;
+
+  /// Defines how an individual element in the master view is to be rendered.
   final types.MasterBuilder<T> masterItemBuilder;
+
+  /// Defines how the main section of the details view are rendered.
   final types.DetailsBuilder<T> detailsItemBuilder;
+
+  /// Defines how the title section of the details view are rendered.
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
+
+  /// Specify if grouping is needed in the master view.
   final types.Data<T>? groupedBy;
+
+  /// Specify if you want to customize the group header. Will be ignored if `groupedBy` is not specified.
   final types.GroupHeader? groupHeaderBuilder;
+
+  /// Transition animation duration.
   final Duration transitionAnimationDuration;
   static const pageTransitionBuilder = ZoomPageTransitionsBuilder();
   final DetailsTitleConfig detailsTitleConfig;

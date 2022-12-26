@@ -4,11 +4,20 @@ import 'elements_view_model.dart';
 import 'types.dart' as types;
 import 'types/details_title_config.dart';
 
+/// Generic detail view widget used by both large (tablet and desktop), and mobile screens
 class DetailView<T> extends StatelessWidget {
   final ElementsViewModel<T> viewModel;
+
+  /// A widget to display in the details view on larger screens when no element is selected in the master view.
   final Widget? nothingSelectedWidget;
+
+  /// Defines how the title section of the details view are rendered.
   final types.DetailsTitleBuilder<T> detailsTitleBuilder;
+
+  /// Defines how the main section of the details view are rendered.
   final types.DetailsBuilder<T> detailsItemBuilder;
+
+  /// Additional options to configure title section of the details view.
   final DetailsTitleConfig detailsTitleConfig;
   final Widget? leading;
   const DetailView({
