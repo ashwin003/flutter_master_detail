@@ -38,6 +38,8 @@ class TabletView<T> extends StatelessWidget {
 
   /// The maximum percentage of view to be occupied by the master view on larger screens.
   final double masterViewFraction;
+
+  /// Max width of the master view. Only used in larger screens.
   final double masterViewMaxWidth;
 
   /// Transition animation duration.
@@ -101,7 +103,7 @@ class TabletView<T> extends StatelessWidget {
       constraints: BoxConstraints(
         maxWidth: min(
           constraints.maxWidth * masterViewFraction,
-          300,
+          masterViewMaxWidth,
         ),
       ),
       child: ElementList(

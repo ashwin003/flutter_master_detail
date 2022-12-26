@@ -47,6 +47,9 @@ class MasterDetailsList<T> extends StatelessWidget {
   /// Additional optionss to configure title section of the details view.
   final DetailsTitleConfig detailsTitleConfig;
   final ElementsViewModel<T> viewModel = ElementsViewModel<T>();
+
+  /// Max width of the master view. Only used in larger screens.
+  final double _masterViewMaxWidth = 300;
   MasterDetailsList({
     super.key,
     this.title,
@@ -97,7 +100,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       groupHeaderBuilder: groupHeaderBuilder,
       title: title,
       masterViewFraction: masterViewFraction,
-      masterViewMaxWidth: 300,
+      masterViewMaxWidth: _masterViewMaxWidth,
       transitionAnimationDuration: transitionAnimationDuration,
       detailsTitleConfig: detailsTitleConfig,
     );
@@ -115,7 +118,7 @@ class MasterDetailsList<T> extends StatelessWidget {
       groupHeaderBuilder: groupHeaderBuilder,
       title: title,
       masterViewFraction: masterViewFraction,
-      masterViewMaxWidth: 300,
+      masterViewMaxWidth: _masterViewMaxWidth,
       transitionAnimationDuration: transitionAnimationDuration,
       detailsTitleConfig: detailsTitleConfig,
     );
