@@ -1,5 +1,6 @@
-import 'package:example/views/grouped.dart';
-import 'package:example/views/ungrouped.dart';
+import './views/grouped.dart';
+import './views/paintings.dart';
+import './views/ungrouped.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,23 +35,25 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = [
     Ungrouped(),
     Grouped(),
+    Paintings()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            label: 'Without grouping',
+            label: 'Example One',
             icon: Icon(Icons.group_off),
           ),
           BottomNavigationBarItem(
-            label: 'With grouping',
+            label: 'Example Two',
             icon: Icon(Icons.group),
+          ),
+          BottomNavigationBarItem(
+            label: 'Example Three',
+            icon: Icon(Icons.art_track),
           ),
         ],
         currentIndex: _selectedIndex,
