@@ -75,7 +75,7 @@ class MasterDetailsList<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ElementsViewModel<T>>.reactive(
       viewModelBuilder: () => viewModel,
-      onModelReady: (viewModel) {
+      onViewModelReady: (viewModel) {
         // Do something once your viewModel is initialized
       },
       builder: (context, viewModel, child) {

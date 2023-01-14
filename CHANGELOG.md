@@ -6,3 +6,6 @@
 
 # 1.1.1
 * Updates title builder for details view to handle expanded view
+
+# 1.1.2
+* Minor Updates
