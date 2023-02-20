@@ -18,7 +18,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   animations: ^2.0.7
-  responsive_builder: ^0.4.3
+  responsive_builder: ^0.6.0
   stacked: ^3.1.0+1
   collection: ^1.16.0
   flutter_sticky_header: ^0.6.5

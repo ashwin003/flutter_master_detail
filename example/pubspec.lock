@@ -174,10 +174,10 @@ packages:
     dependency: transitive
     description:
       name: responsive_builder
-      sha256: f01bc341c73b6db7bd6319e22d2c160f28f924399ae46e6699ecc8160ba2765c
+      sha256: "824fa4a5822096a3c70804652b85e856d04099cb4f637e99fbee468db08e7177"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.3"
+    version: "0.6.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -280,5 +280,5 @@ packages:
     source: hosted
     version: "2.1.4"
 sdks:
-  dart: ">=2.18.4 <4.0.0"
+  dart: ">=2.18.4 <=3.0.0"
   flutter: ">=3.0.0"
