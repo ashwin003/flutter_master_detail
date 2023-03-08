@@ -12,3 +12,6 @@
 
 # 1.1.3
 * Minor Updates
+
+# 1.1.4
+* Performance improvements

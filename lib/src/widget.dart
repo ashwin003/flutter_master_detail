@@ -79,10 +79,10 @@ class MasterDetailsList<T> extends StatelessWidget {
         // Do something once your viewModel is initialized
       },
       builder: (context, viewModel, child) {
-        return ScreenTypeLayout(
-          mobile: _buildMobileView(viewModel),
-          desktop: _buildDesktopView(viewModel),
-          tablet: _buildTabletView(viewModel),
+        return ScreenTypeLayout.builder(
+          mobile: (ctx) => _buildMobileView(viewModel),
+          desktop: (ctx) => _buildDesktopView(viewModel),
+          tablet: (ctx) => _buildTabletView(viewModel),
         );
       },
     );
