@@ -9,3 +9,6 @@
 
 # 1.1.2
 * Minor Updates
+
+# 1.1.3
+* Minor Updates
