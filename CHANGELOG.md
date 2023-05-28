@@ -15,3 +15,6 @@
 
 # 1.1.4
 * Performance improvements
+
+# 1.1.5
+* Minor changes
