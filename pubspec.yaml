@@ -8,12 +8,12 @@ repository: https://github.com/ashwin003/flutter_master_detail
 issue_tracker: https://github.com/ashwin003/flutter_master_detail/issues
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=2.18.4 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   animations: ^2.0.7
-  collection: ^1.17.2
+  collection: ^1.17.1
   cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
