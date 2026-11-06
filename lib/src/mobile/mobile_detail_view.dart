@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_master_detail/src/detail_page.dart';
+import 'package:flutter_master_detail/src/detail_navigator.dart';
 
 import '../elements_view_model.dart';
 import '../types.dart' as types;
@@ -27,17 +28,19 @@ class MobileDetailView<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DetailPage(
-      viewModel: viewModel,
-      detailsTitleBuilder: detailsTitleBuilder,
-      detailsItemBuilder: detailsItemBuilder,
-      leading: IconButton(
-        onPressed: () {
-          viewModel.selectedItem = null;
-        },
-        icon: const Icon(Icons.arrow_back),
+    return DetailNavigator(
+      onPopRoot: _backToMaster,
+      rootBuilder: (_) => DetailPage<T>(
+        viewModel: viewModel,
+        detailsTitleBuilder: detailsTitleBuilder,
+        detailsItemBuilder: detailsItemBuilder,
+        leading: BackButton(onPressed: _backToMaster),
+        detailsTitleConfig: detailsTitleConfig,
       ),
-      detailsTitleConfig: detailsTitleConfig,
     );
+  }
+
+  void _backToMaster() {
+    viewModel.selectedItem = null;
   }
 }
