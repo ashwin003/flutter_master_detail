@@ -18,3 +18,6 @@
 
 # 1.1.5
 * Minor changes
+
+# 1.1.6
+* Upgrades to a newer platform

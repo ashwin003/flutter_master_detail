@@ -2,27 +2,27 @@ name: flutter_master_detail
 description: A package that simplifies building flexible adaptive master detail
   views for different screen sizes
 
-version: 1.1.5
+version: 1.1.6
 homepage: https://github.com/ashwin003/flutter_master_detail
 repository: https://github.com/ashwin003/flutter_master_detail
 issue_tracker: https://github.com/ashwin003/flutter_master_detail/issues
 
 environment:
-  sdk: '>=2.18.4 <4.0.0'
-  flutter: ">=1.17.0"
+  sdk: ^3.12.0
+  flutter: ">=3.44.0"
 
 dependencies:
-  animations: ^2.0.7
+  animations: ^3.0.0
   collection: ^1.17.1
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^2.0.0
   flutter:
     sdk: flutter
-  flutter_sticky_header: ^0.6.5
+  flutter_sticky_header: ^0.11.0
   responsive_builder: ^0.7.0
   stacked: ^3.3.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 
