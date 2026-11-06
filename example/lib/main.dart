@@ -1,5 +1,6 @@
 import './views/grouped.dart';
 import './views/paintings.dart';
+import './views/settings.dart';
 import './views/ungrouped.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      theme: ThemeData(primarySwatch: Colors.indigo),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -35,7 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = [
     Ungrouped(),
     Grouped(),
-    Paintings()
+    Paintings(),
+    Settings(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Example Three',
             icon: Icon(Icons.art_track),
           ),
+          BottomNavigationBarItem(
+            label: 'Settings',
+            icon: Icon(Icons.settings),
+          ),
         ],
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ), // This trailing comma makes auto-formatting nicer for build methods.

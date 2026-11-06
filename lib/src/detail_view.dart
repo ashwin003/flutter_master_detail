@@ -55,19 +55,17 @@ class DetailView<T> extends StatelessWidget {
           stretch: detailsTitleConfig.stretch,
         ),
         SliverList(
-            delegate: SliverChildBuilderDelegate(
-          _buildDetailElement,
-          childCount: 1,
-        ))
+          delegate: SliverChildBuilderDelegate(
+            _buildDetailElement,
+            childCount: 1,
+          ),
+        ),
       ],
     );
   }
 
   Widget _buildDetailElement(BuildContext context, int index) {
-    return detailsItemBuilder(
-      context,
-      viewModel.selectedItem as T,
-    );
+    return detailsItemBuilder(context, viewModel.selectedItem as T);
   }
 
   Widget _buildNothingSelectedView() {

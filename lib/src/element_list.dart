@@ -41,19 +41,15 @@ class ElementList<T> extends StatelessWidget {
     if (groupedBy != null) {
       return CustomScrollView(
         slivers: [
-          SliverAppBar(
-            flexibleSpace: title,
-          ),
-          ..._buildGroupedListView(context)
+          SliverAppBar(flexibleSpace: title),
+          ..._buildGroupedListView(context),
         ],
       );
     }
     return CustomScrollView(
       slivers: [
-        SliverAppBar(
-          flexibleSpace: title,
-        ),
-        _buildNonGroupedListView(items)
+        SliverAppBar(flexibleSpace: title),
+        _buildNonGroupedListView(items),
       ],
     );
   }
@@ -66,7 +62,10 @@ class ElementList<T> extends StatelessWidget {
   }
 
   SliverStickyHeader _buildGroupedElement(
-      BuildContext context, dynamic key, List<T> value) {
+    BuildContext context,
+    dynamic key,
+    List<T> value,
+  ) {
     final headerBuilder = groupHeaderBuilder ?? _buildHeaderWidget;
     return SliverStickyHeader(
       header: headerBuilder(context, key, value.length),
@@ -96,11 +95,7 @@ class ElementList<T> extends StatelessWidget {
   Widget _buildElement(BuildContext context, T item) {
     return GestureDetector(
       onTap: () => onTap(item),
-      child: masterItemBuilder(
-        context,
-        item,
-        item == selectedItem,
-      ),
+      child: masterItemBuilder(context, item, item == selectedItem),
     );
   }
 }

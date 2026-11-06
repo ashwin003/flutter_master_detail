@@ -21,3 +21,10 @@
 
 # 1.1.6
 * Upgrades to a newer platform
+
+# 1.2.0
+* Adds iOS / macOS Settings-style drill-down navigation: the details pane now has its own navigator, so pages pushed from a detail view (e.g. `Navigator.of(context).push(...)`) open inside the details pane while the master list stays visible on larger screens
+* Back button and system / predictive back gestures pop sub-pages first, then return to the master list on mobile
+* Selecting a different item starts a fresh details stack; tapping the selected item again returns to its root details page
+* Details pane now animates when switching between items on tablet and desktop
+* Adds a Settings example to the example app

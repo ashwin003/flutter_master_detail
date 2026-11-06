@@ -65,10 +65,7 @@ class MasterDetailsList<T> extends StatelessWidget {
     this.transitionAnimationDuration = const Duration(milliseconds: 500),
     this.detailsTitleConfig = const DetailsTitleConfig(),
   }) {
-    _sort([
-      groupedBy,
-      sortBy,
-    ]);
+    _sort([groupedBy, sortBy]);
   }
 
   @override
@@ -143,8 +140,9 @@ class MasterDetailsList<T> extends StatelessWidget {
   void _sort(List<types.Data<T>?> sorters) {
     for (var i = 0; i < sorters.length; i++) {
       final sorter = sorters.elementAt(i);
-      final prevSorter =
-          i == 0 ? sorters.elementAt(i) : sorters.elementAt(i - 1);
+      final prevSorter = i == 0
+          ? sorters.elementAt(i)
+          : sorters.elementAt(i - 1);
       if (sorter != null) {
         items.sort((a, b) {
           if (prevSorter != null) {

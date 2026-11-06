@@ -42,7 +42,7 @@ class MobileMasterView<T> extends StatelessWidget {
         selectedItem: viewModel.selectedItem,
         title: title,
         masterItemBuilder: masterItemBuilder,
-        onTap: (value) => viewModel.selectedItem = value,
+        onTap: viewModel.select,
       ),
     );
   }

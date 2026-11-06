@@ -2,7 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'detail_view.dart';
+import 'detail_navigator.dart';
+import 'detail_page.dart';
 import 'element_list.dart';
 import 'elements_view_model.dart';
 import 'types.dart' as types;
@@ -84,16 +85,24 @@ class DesktopView<T> extends StatelessWidget {
     return Expanded(
       child: AnimatedSwitcher(
         duration: transitionAnimationDuration,
-        child: DetailView(
-          detailsItemBuilder: detailsItemBuilder,
-          detailsTitleBuilder: detailsTitleBuilder,
-          viewModel: viewModel,
-          nothingSelectedWidget: nothingSelectedWidget,
-          detailsTitleConfig: detailsTitleConfig,
+        child: DetailNavigator(
+          key: ValueKey((viewModel.selectedItem, viewModel.detailsGeneration)),
+          rootBuilder: (_) => DetailPage<T>(
+            detailsItemBuilder: detailsItemBuilder,
+            detailsTitleBuilder: detailsTitleBuilder,
+            viewModel: viewModel,
+            nothingSelectedWidget: nothingSelectedWidget,
+            detailsTitleConfig: detailsTitleConfig,
+          ),
         ),
         transitionBuilder: (child, animation) =>
-            const FadeUpwardsPageTransitionsBuilder()
-                .buildTransitions(null, context, animation, null, child),
+            const FadeUpwardsPageTransitionsBuilder().buildTransitions(
+              null,
+              context,
+              animation,
+              null,
+              child,
+            ),
       ),
     );
   }
@@ -113,7 +122,7 @@ class DesktopView<T> extends StatelessWidget {
         groupHeaderBuilder: groupHeaderBuilder,
         selectedItem: viewModel.selectedItem,
         masterItemBuilder: masterItemBuilder,
-        onTap: (item) => viewModel.selectedItem = item,
+        onTap: viewModel.select,
       ),
     );
   }
