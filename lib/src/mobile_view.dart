@@ -91,12 +91,21 @@ class MobileView<T> extends StatelessWidget {
     Animation<double> primaryAnimation,
     Animation<double> secondaryAnimation,
   ) {
-    return pageTransitionBuilder.buildTransitions(
-      null,
-      null,
-      primaryAnimation,
-      secondaryAnimation,
-      child,
+    return Builder(
+      builder: (context) {
+        final route = ModalRoute.of(context);
+        return pageTransitionBuilder.buildTransitions(
+          route is PageRoute ? route : _fallbackRoute,
+          context,
+          primaryAnimation,
+          secondaryAnimation,
+          child,
+        );
+      },
     );
   }
+
+  static final PageRoute<void> _fallbackRoute = MaterialPageRoute<void>(
+    builder: (_) => const SizedBox.shrink(),
+  );
 }

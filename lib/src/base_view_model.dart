@@ -5,11 +5,9 @@ class BaseViewModel extends ChangeNotifier {
   bool _busy;
   bool _isDisposed = false;
 
-  BaseViewModel({
-    bool busy = false,
-    String? title,
-  })  : _busy = busy,
-        _title = title;
+  BaseViewModel({bool busy = false, String? title})
+    : _busy = busy,
+      _title = title;
 
   bool get busy => _busy;
   bool get isDisposed => _isDisposed;
